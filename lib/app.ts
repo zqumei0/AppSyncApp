@@ -15,6 +15,7 @@ const databaseStack = new DatabaseStack(app, DATABASE_STACK_NAME, {
 });
 const apiStack = new ApiStack(app, API_STACK_NAME, {
   disambiguator: APPLICATION_NAME,
+  reservationTable: databaseStack.reservationTable,
   stackName: API_STACK_NAME,
 });
 

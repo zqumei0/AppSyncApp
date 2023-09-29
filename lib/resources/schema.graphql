@@ -1,0 +1,26 @@
+type FlightReservation {
+  reservationId: ID!
+  passengerName: String!
+  flightInformation: FlightInformation
+}
+
+type FlightInformation {
+  flightNumber: Int!
+  departureDate: String
+  departureTime: String
+  arrivalDate: String
+  arrivalTime: String
+  origin: String
+  destination: String
+  seatNumber: String
+}
+
+type Query {
+  getFlightReservation(reservationId: ID!): FlightReservation
+}
+
+# type Mutation {
+#   createFlightReservation(reservationId: ID!, passengerName: String!, flightInformation: FlightInformation): FlightReservation
+#   modifyFlightReservation(reservationId: ID!, passengerName: String!, flightInformation: FlightInformation): FlightReservation
+#   deleteFlightReservation(reservationId: ID!): FlightReservation
+# }

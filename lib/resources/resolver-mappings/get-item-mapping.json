@@ -1,0 +1,8 @@
+{
+	"version" : "2018-05-29",
+	"operation" : "GetItem",
+	"key" : {
+		"id" : {"S": $util.toJson($ctx.args.id)}
+	},
+	"consistentRead" : true
+}

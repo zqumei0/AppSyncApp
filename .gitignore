@@ -6,3 +6,10 @@ node_modules
 # CDK asset staging directory
 .cdk.staging
 cdk.out
+
+# MACOS
+*.DS_Store
+*.idea
+
+# Java
+*target/

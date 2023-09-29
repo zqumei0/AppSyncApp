@@ -54,7 +54,7 @@ export class ApiStack extends Stack {
     });
   }
 
-  private configureAppSyncResolvers(): void {
-    // GRAPHQL_FIELDS.forEach(({ typeName, fieldName }) => {});
+  private configureLambdaResolvers(): void {
+    // LAMBDA_GRAPHQL_FIELDS.forEach(({ typeName, fieldName }) => {});
   }
 }

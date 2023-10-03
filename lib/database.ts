@@ -63,6 +63,7 @@ export class DatabaseStack extends Stack {
         DATA_TABLE: this.reservationTable.tableName,
         DATA_FILE: mockDataFile,
       },
+      functionName: `${triggerNamePrefix}Function`,
       handler: triggerFunctionEntryPoint,
       runtime: Runtime.JAVA_17,
       timeout: Duration.minutes(5),

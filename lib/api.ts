@@ -141,15 +141,17 @@ export class ApiStack extends Stack {
 
   private configureReportBackend(): void {
     const packageName = 'appsyncresolvers.zip';
+    const functionName = `${this.props.disambiguator}-ReportLambdaFunction`;
     const resolverFunctionEntryPoint = 'com.example.appsyncapp.handlers.GenerateFlightManifestHandler::handleRequest';
     const maxProcessingTime = Duration.minutes(5);
 
-    const reportLambdaFunction = new LFunction(this, `${this.props.disambiguator}-ReportLambdaFunction`, {
+    const reportLambdaFunction = new LFunction(this, functionName, {
       code: Code.fromAsset(resolve(__dirname, LAMBDA_BASE_PATH, LAMBDA_RESOLVER_PATH, packageName)),
       environment: {
         REPORT_BUCKET: this.reportBucket.bucketName,
         REPORT_QUEUE: this.reportQueue.queueName,
       },
+      functionName,
       handler: resolverFunctionEntryPoint,
       runtime: Runtime.JAVA_17,
       timeout: maxProcessingTime,

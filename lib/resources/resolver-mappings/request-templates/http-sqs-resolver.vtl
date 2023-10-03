@@ -1,0 +1,11 @@
+{
+	"version": "2018-05-29",
+	"method": "POST",
+	"params": {
+		"body": "Action=SendMessage&MessageBody=$util.urlEncode($ctx.args.message)&Version=2012-11-05",
+		"headers": {
+			"Content-Type" : "application/x-www-form-urlencoded"
+		},
+	},
+	"resourcePath": "/${data.aws_arn.sqs.account}/${aws_sqs_queue.queue.name}/"
+}

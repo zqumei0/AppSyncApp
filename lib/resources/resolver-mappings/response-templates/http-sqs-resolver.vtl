@@ -1,0 +1,7 @@
+#if ($ctx.error)
+	$util.error($ctx.error.message, $ctx.error.type)
+#end
+#if ($ctx.result.statusCode < 200 || $ctx.result.statusCode >= 300)
+	$util.error($ctx.result.body, "StatusCode$ctx.result.statusCode")
+#end
+$util.toJson($util.xml.toMap($ctx.result.body).SendMessageResponse.SendMessageResult.MessageId)

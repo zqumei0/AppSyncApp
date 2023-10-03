@@ -10,6 +10,7 @@ cdk.out
 # MACOS
 *.DS_Store
 *.idea
+*.vscode
 
 # Java
 *target/

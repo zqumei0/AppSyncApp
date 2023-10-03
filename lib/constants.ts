@@ -7,3 +7,5 @@ export const API_STACK_NAME: string = `${APPLICATION_NAME}-ApiStack`;
 export const LAMBDA_BASE_PATH: string = '../lambdas';
 
 export const LAMBDA_TRIGGER_PATH: string = 'appsync-trigger/target';
+
+export const LAMBDA_RESOLVER_PATH: string = 'appsync-resolvers/target';

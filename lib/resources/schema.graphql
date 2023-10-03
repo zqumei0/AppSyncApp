@@ -40,4 +40,5 @@ type Mutation {
   createFlightReservation(newFlightReservation: NewFlightReservation!): FlightReservation!
   modifyFlightReservation(reservationId: ID!, newFlightInformation: NewFlightInformation!): FlightReservation!
   deleteFlightReservation(reservationId: ID!): FlightReservation
+  generateFlightManifest(message: String!) : String
 }
